@@ -1,0 +1,115 @@
+<style>
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(135deg, #141E30, #243B55);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: rgba(20, 30, 48, 0.95);
+    backdrop-filter: blur(10px);
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: left 0.4s ease;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #00d4ff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    color: #eee;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-left: 3px solid transparent;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-left: 3px solid #00d4ff;
+    color: #00d4ff;
+}
+
+/* --- MENU TOGGLE --- */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 26px;
+    background: #00d4ff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #141E30;
+    z-index: 1000;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: #00bcd4;
+    transform: scale(1.05);
+}
+
+.menu-toggle.active {
+    background: #ff4081;
+}
+
+/* --- MAIN CONTENT --- */
+main {
+    margin: 100px auto;
+    max-width: 800px;
+    text-align: center;
+    padding: 20px;
+}
+
+main h1 {
+    font-size: 2.5rem;
+    color: #00d4ff;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* --- FOOTER --- */
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 15px 0;
+    background: rgba(0,0,0,0.3);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+</style>
