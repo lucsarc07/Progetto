@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barra laterale -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo"></div>
+        <a href="index.html">🏠 Home</a>
+        <a href="chi-siamo.html">👥 Chi Siamo</a>
+        <a href="servizi.html">💼 Servizi</a>
+        <a href="prenotazioni.html">🗓️ Prenotazioni</a>
+        <a href="attrezzatura.html">⚙️ Attrezzatura</a>
+        <a href="costo.html">💰 Costo</a>
+        <a href="contatti.html">📞 Contatti</a>
+        <a href="login.html">🔐 Login</a>
+    </nav>
+
+    <!-- Pulsante per aprire/chiudere la barra -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- Contenuto principale -->
+    <main>
+        <h3>Storia della sala, il team, galleria/tour</h3>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Il Mio Sito - Tutti i diritti riservati</p>
+    </footer>
+
+    <script>
+        // Script per aprire/chiudere la barra laterale
+        const sidebar = document.getElementById('sidebar');
+        const menuToggle = document.getElementById('menuToggle');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
+
