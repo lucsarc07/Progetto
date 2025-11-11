@@ -1,5 +1,96 @@
-<style>
-/* RESET */
+/*<style>*/
+
+/* Header con login */
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 60px;
+    background: rgba(20, 30, 48, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+}
+
+.login-btn {
+    background: linear-gradient(135deg, #00d4ff, #00bcd4);
+    color: #141E30;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid #00d4ff;
+    font-family: "Poppins", Arial, sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.login-btn:hover {
+    background: transparent;
+    color: #00d4ff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+}
+
+/* Aggiusta il contenuto principale per lo spazio dell'header */
+main {
+    margin-top: 100px; /* Spazio per l'header */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Aggiusta il menu toggle per non sovrapporsi con l'header */
+.menu-toggle {
+    position: fixed;
+    top: 75px; /* Abbassato per non sovrapporsi all'header */
+    left: 20px;
+    font-size: 26px;
+    background: #00d4ff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #141E30;
+    z-index: 1000;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        padding: 0 15px;
+        height: 50px;
+    }
+    
+    .login-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    main {
+        margin-top: 90px;
+    }
+    
+    .menu-toggle {
+        top: 65px;
+    }
+}
+
+/* struttura corpo del sito */
+
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +106,7 @@ body {
     flex-direction: column;
 }
 
-/* --- SIDEBAR --- */
+/* --- barra di ricerca --- */
 .sidebar {
     position: fixed;
     top: 0;
@@ -112,4 +203,209 @@ footer {
     font-size: 0.9rem;
     letter-spacing: 1px;
 }
-</style>
+
+/* Pagina LOGIN */
+/* Header principale */
+.main-header {
+    background: linear-gradient(135deg, #141E30, #243B55);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Link home migliorato */
+.home-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.home-link:hover {
+    background: rgba(0, 212, 255, 0.2);
+    border-color: #00d4ff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+}
+
+.home-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.home-link:hover .home-icon {
+    transform: scale(1.2);
+}
+
+.home-text {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+/* Container login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+/* Card login */
+.login-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.6s ease;
+}
+
+.login-title {
+    color: #00d4ff;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Form stile */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #00d4ff;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Bottone login */
+.login-button {
+    background: linear-gradient(135deg, #00d4ff, #00bcd4);
+    color: #141E30;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+}
+
+/* Link aggiuntivi */
+.login-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.forgot-password,
+.register-link {
+    color: #00d4ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover,
+.register-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Animazione */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 1rem;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .home-link {
+        padding: 10px 16px;
+    }
+    
+    .login-card {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .home-text {
+        font-size: 0.9rem;
+    }
+}
+
+/*</style>*/

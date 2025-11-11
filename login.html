@@ -7,42 +7,37 @@
 </head>
 <body>
 
-    <!-- Barra laterale -->
-    <nav class="sidebar" id="sidebar">
-        <div class="logo"></div>
-        <a href="index.html">🏠 Home</a>
-        <a href="chi-siamo.html">👥 Chi Siamo</a>
-        <a href="servizi.html">💼 Servizi</a>
-        <a href="prenotazioni.html">🗓️ Prenotazioni</a>
-        <a href="attrezzatura.html">⚙️ Attrezzatura</a>
-        <a href="costo.html">💰 Costo</a>
-        <a href="contatti.html">📞 Contatti</a>
-        <a href="login.html">🔐 Login</a>
-    </nav>
-
-    <!-- Pulsante per aprire/chiudere la barra -->
-    <button class="menu-toggle" id="menuToggle">☰</button>
+    <!-- Header con navigazione -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="index.html" class="home-link">
+                <div class="home-icon">🏠</div>
+                <span class="home-text">Torna alla Home</span>
+            </a>
+        </nav>
+    </header>
 
     <!-- Contenuto principale -->
-    <main>
-        <h3>login</h3>
+    <main class="login-container">
+        <div class="login-card">
+            <h1 class="login-title">Accedi al tuo account</h1>
+            <form class="login-form">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="la-tua-email@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Inserisci la tua password" required>
+                </div>
+                <button type="submit" class="login-button">Accedi</button>
+                <div class="login-links">
+                    <a href="#" class="forgot-password">Password dimenticata?</a>
+                    <a href="#" class="register-link">Non hai un account? Registrati</a>
+                </div>
+            </form>
+        </div>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Il Mio Sito - Tutti i diritti riservati</p>
-    </footer>
-
-    <script>
-        // Script per aprire/chiudere la barra laterale
-        const sidebar = document.getElementById('sidebar');
-        const menuToggle = document.getElementById('menuToggle');
-
-        menuToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('open');
-            menuToggle.classList.toggle('active');
-        });
-    </script>
 
 </body>
 </html>
-
